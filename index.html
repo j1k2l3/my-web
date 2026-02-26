@@ -42,20 +42,7 @@
     }
   </style>
 </head>
-  <script>
-  async function updateRustDeskLink() {
-    const response = await fetch("https://api.github.com/repos/rustdesk/rustdesk/releases/latest");
-    const data = await response.json();
-
-    // Windows용 exe 파일 찾기
-    const winAsset = data.assets.find(a => a.name.includes("windows") && a.name.endsWith(".exe"));
-    if (winAsset) {
-      document.getElementById("rustdesk-windows").href = winAsset.browser_download_url;
-    }
-  }
-
-  updateRustDeskLink();
-</script>
+  
 <script>
   async function updateRustDeskLink() {
     const response = await fetch("https://api.github.com/repos/rustdesk/rustdesk/releases/latest");
@@ -63,7 +50,7 @@
 
     // Windows 64bit exe 파일 찾기
     const winAsset = data.assets.find(a =>
-      a.name.includes("windows") &&
+      
       a.name.includes("x86_64") &&
       a.name.endsWith(".exe")
     );
